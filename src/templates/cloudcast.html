@@ -1,0 +1,23 @@
+<div class="row">
+	<a href="#/home"><button type="button" class="btn btn-large btn-success backbtn">Back</button></a>
+	<ul class="infos1">
+		<li><strong>Name</strong>: {{cloudcast.name}}</li>
+		<li><strong>Description</strong>: {{cloudcast.description}}</li>
+		<li><strong>User</strong>: {{cloudcast.user.username}}</li>
+	</ul>
+	<ul class="infos2">
+		<li><strong>Total Plays</strong>: {{cloudcast.play_count}}</li>
+		<li><strong>Tags</strong>: 
+			<span ng-repeat="cl in cloudcast.tags"><button type="button" class="btn btn-xs btn-success">{{cl.name}}</button></span>
+		</li>
+		<li><strong>Likes</strong>: {{cloudcast.favorite_count}}</li>
+		<li><strong>Duration</strong>: {{(cloudcast.audio_length/60) | number:0}} m.</li>
+	</ul>
+</div>
+<hr><br>
+<div class="row">
+	<div class="player">
+		<iframe ng-src="{{trustSrc()}}" frameborder="0"></iframe>
+	</div>
+</div>
+	
